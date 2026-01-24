@@ -11,3 +11,7 @@ body {
 .theater_list tbody tr:first-child {
   background-color: pink;
 }
+
+.theater_list {
+  width: 100%;
+}
