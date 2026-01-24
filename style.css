@@ -7,3 +7,7 @@ body {
   width: 300px;
   height: 300px;
 }
+
+.theater_list tbody tr:first-child {
+  background-color: pink;
+}
