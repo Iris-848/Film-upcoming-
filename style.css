@@ -1,17 +1,27 @@
 body {
   margin: 0;
 }
+
 .character_list li a img {
   width: 300px;
   height: 300px;
 }
+
 .theater_list tbody tr:first-child {
   background-color: pink;
 }
+
 .theater_list {
   width: 100%;
 }
 
+/* リセットCSS */
+
+button {
+  padding: 0;
+  background: none;
+  border: none;
+}
 
 /* ローディング画面 */
 
@@ -22,6 +32,7 @@ body {
   background-color: #c4e4ff;
   display: flex;
   justify-content: center;
+  z-index: 99;
 }
 .loading_wrapper {
   display: flex;
@@ -32,11 +43,10 @@ body {
 .step {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
 }
 .footprint {
-  width: 30px;
-  height: 30px;
   opacity: 0;
   animation-name: footprint_fade;
   animation-duration: 4s;
@@ -74,8 +84,50 @@ body {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
-.loading_fadeout {
+@media screen and (max-width: 768px) {
+  .footprint {
+    width: 35%;
+  }
+  .loading_wrapper p {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 769px) {
+  .step {
+    gap: 25px;
+  }
+  .footprint {
+    width: 50%;
+  }
+  .loading_wrapper p {
+    font-size: 38px;
+  }
+}
+.fadeout {
   transition: opacity 0.5s ease;
   opacity: 0;
 }
 
+/* 予告画面 */
+
+.modal_trailer {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+}
+.modal_trailer_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+}
+.material-symbols-outlined {
+  color: #bebebe;
+  font-size: 50px;
+}
