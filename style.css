@@ -125,9 +125,18 @@ button {
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  position: relative;
 }
 .material-symbols-outlined {
   color: #bebebe;
   font-size: 50px;
+}
+.modal_trailer_wrapper {
+  width: 80%;
+}
+iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  height: auto;
+  display: block;
+  
 }
