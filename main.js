@@ -30,3 +30,28 @@ modalTrailerClose.addEventListener("click", () => {
     }, 500);
   });
 });
+
+modalTrailerClose.addEventListener("click", () => {
+
+  const heroContentsLogo = document.querySelector(".hero_contents_logo");
+  const heroContentsCopy = document.querySelector(".hero_contents_copy");
+  const heroContentsDate = document.querySelector(".hero_contents_date");
+
+  setTimeout(() => {
+    heroContentsLogo.classList.add("slidedown");
+    setTimeout(() => {
+      heroContentsCopy.classList.add("slidedown");
+      setTimeout(() => {
+        heroContentsDate.classList.add("slidedown");
+      }, 1300);
+    }, 1000);
+  }, 500);
+}, {once: true});
+
+
+document.addEventListener("change", () => {
+  const ticketAdult = document.querySelector("#ticket_adult").value;
+  const ticketChild = document.querySelector("#ticket_child").value;
+  const sum = ticketAdult * 2000 + ticketChild * 1300;
+  document.querySelector(".sum").innerHTML = "¥ " + sum.toLocaleString();
+});
