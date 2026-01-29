@@ -1,7 +1,3 @@
-body {
-  margin: 0;
-}
-
 .character_list li a img {
   width: 300px;
   height: 300px;
@@ -15,12 +11,26 @@ body {
   width: 100%;
 }
 
+p {
+  font-family: "Shippori Mincho", serif;
+}
+
 /* リセットCSS */
 
+body {
+  margin: 0;
+}
 button {
   padding: 0;
   background: none;
   border: none;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
 }
 
 /* ローディング画面 */
@@ -100,12 +110,198 @@ button {
     width: 50%;
   }
   .loading_wrapper p {
-    font-size: 38px;
+    font-size: 42px;
   }
 }
 .fadeout {
   transition: opacity 0.5s ease;
   opacity: 0;
+}
+
+/* ヒーロー */
+
+.hero {
+  position: relative;
+}
+.hero_bg {
+  display: flex;
+}
+.hero_bg img {
+  width: 100%;
+}
+.hero_contents {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+}
+.hero_contents_logo, .hero_contents_copy, .hero_contents_date {
+  opacity: 0;
+  position: absolute;
+}
+.hero_contents_logo_en {
+  position: absolute;
+}
+@media screen and (max-width: 768px) {
+  .hero_contents_logo {
+    width: 95%;
+    top: 20%;
+  }
+  .hero_contents_logo_en {
+    width: 85%;
+    top: 10%;
+  }
+  .hero_contents_copy {
+    width: 63%;
+    top: 40%;
+    left: 3%;
+  }
+  .hero_contents_date {
+    width: 25%;
+    top: 75%;
+  }
+}
+@media screen and (min-width: 769px) {
+  .hero_contents_logo {
+    top: 10%;
+    width: 50%;
+  }
+  .hero_contents_logo_en {
+    width: 40%;
+  }
+  .hero_contents_copy {
+    width: 30%;
+    top: 45%;
+    left: 58%;
+  }
+  .hero_contents_date {
+    width: 9%;
+    top: 75%;
+  }
+}
+.slidedown {
+  transition: opacity 2s ease, transform 2s ease;
+  opacity: 1;
+  transform: translateY(20px);
+}
+
+/* メニュー画面 */
+
+.menu {
+  background-color: #e8f1fd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu_btns {
+  display: flex;
+  width: 80%;
+  text-align: center;
+  margin-top: 50px;
+}
+.menu_btns_item {
+  border: solid 1.5px #2252d0;
+  border-radius: 5px;
+  color: #2252d0;
+  font-size: 28px;
+  font-family: "IM Fell Great Primer SC", serif;
+}
+@media screen and (max-width: 768px) {
+  .menu_btns {
+    flex-direction: column;
+  }
+  .menu_btns_item {
+    padding: 3%;
+    margin: 2%;
+  }
+}
+@media screen and (min-width: 769px) {
+  .menu_btns {
+    justify-content: center;
+    gap: 2%;
+  }
+  .menu_btns_item {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+}
+
+.menu_purchase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  padding: 30px;
+  border-radius: 10px;
+  background: #ffffff;
+}
+.menu_purchase_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu_purchase_form_tr:last-child {
+  border-top: solid 1px #000000;
+}
+.menu_purchase_form_tr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu_purchase_form_tr select {
+  border: none;
+  border-radius: 5px;
+  background-color: #e8f1fd;
+  color: #2352d1;
+  text-align: center;
+  font-family: "Shippori Mincho", serif;
+  margin: 15px 0 15px 0;
+}
+.menu_purchase_btns a img {
+  border-radius: 10%;
+  border: 4px solid #fb6157;
+  box-shadow: 1px 2px 2px 0px #c10b00;
+  width: 100px;
+}
+@media screen and (max-width: 768px) {
+  .menu_purchase {
+    flex-direction: column;
+    width: 70%;
+    gap: 20px;
+  }
+  .menu_purchase_form_tr {
+    gap: 25px;
+    font-size: 20px;
+  }
+  .menu_purchase_form_tr select {
+    height: 35px;
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 769px) {
+  .menu_purchase {
+    flex-direction: row;
+    width: 60%;
+    gap: 40px;
+  }
+  .menu_purchase_header {
+    width: 20%;
+  }
+  .menu_purchase_form_tr {
+    gap: 30px;
+  }
+  .menu_purchase_form_tr select {
+    width: 100px;
+    font-size: 20px;
+  }
+}
+
+.menu_shares {
 }
 
 /* 予告画面 */
@@ -125,17 +321,20 @@ button {
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
+  width: 95%;
 }
 .material-symbols-outlined {
   color: #bebebe;
   font-size: 50px;
-}
-.modal_trailer_wrapper {
-  width: 80%;
 }
 iframe {
   width: 100%;
   aspect-ratio: 16/9;
   height: auto;
   display: block;
+}
+@media screen and (min-width: 769px) {
+  .modal_trailer_wrapper {
+    max-width: 800px;
+  }
 }
